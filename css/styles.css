@@ -10,6 +10,71 @@
   flex: 1;
 }
 
+.homepage-copyright {
+  font-size: 1.25rem;
+}
+
+/* ZOOM on hover*/
+.img-zoom,
+.btn {
+  transition: all .75s;
+}
+
+.img-zoom:hover,
+.btn:hover {
+  transform: scale(1.03);
+}
+
+/* zoom into view */
+.hidden {
+  visibility: hidden;
+  transform: scale(.5);
+}
+
+.zoom {
+  transition: transform 1.2s;
+  visibility: visible;
+  transform: scale(1);
+}
+
+/* CONTACT PAGE */
+
+.contact-header {
+  z-index: 3;
+}
+
+.contact-hero {
+  background-image: url(../assets/images/contact/water.jpg);
+  background-size: cover;
+  position: relative;
+  height: 300px;
+  z-index: 0;
+}
+
+.contact-hero-right-angle {
+  width: 0px;
+  height: 0px;
+  border-right: 50vw solid white;
+  border-top: 35px solid transparent;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.contact-hero-left-angle {
+  width: 0px;
+  height: 0px;
+  border-left: 50vw solid white;
+  border-top: 35px solid transparent;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+}
+
+/* HOMEPAGE */
+
 .homepage-mission-logo {
   width: 100px;
 }
@@ -21,13 +86,33 @@
 }
 
 .homepage-title {
-  font-size: 5rem;
+  font-size: 4rem;
   color: #00bfff;
-  line-height: 120%;
+  line-height: 1.1;
   background: -webkit-linear-gradient(#6edbff, #0099ff);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation-name: verticalFloat;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+
+
+@keyframes verticalFloat {
+  0% {
+    transform: translateY(0)
+  }
+
+  50% {
+    transform: translateY(10px)
+  }
+
+  100% {
+    transform: translateY(0px)
+  }
 }
 
 .title-copyright {
@@ -35,9 +120,9 @@
 }
 
 .homepage-subtitle {
-  font-size: 2em;
+  font-size: 1.6em;
   color: rgb(68, 68, 68);
-  line-height: 110%;
+  line-height: 1.1;
 }
 
 .homepage-hero-text {
@@ -58,6 +143,19 @@
   color: #00bfff;
 }
 
+.homepage-section-title {
+  font-size: 2.75rem;
+  line-height: 1.2;
+}
+
+.homepage-section-subtitle {
+  font-size: 1.5rem;
+}
+
+.homepage-bottom-title {
+  font-size: 1.5rem;
+}
+
 .btn-blue {
   background-color: #00bfff;
   color: white;
@@ -76,6 +174,76 @@
   background-size: cover;
 }
 
+/* PRODUCTS PAGE */
+.product-background-title {
+  background-image: linear-gradient(90deg, #42b9e0, #278dd1);
+}
+
+.about-images {
+  width: 100%;
+  height: auto;
+}
+
+/* ALKALINE WATER PAGE */
+.ph-icon {
+  width: 100%;
+  height: auto;
+  line-height: 0;
+  margin: auto;
+}
+
+/* JOIN ENAGIC PAGE */
+
+#photos {
+  /* Prevent vertical gaps */
+  /* line-height: 0; */
+  -webkit-column-count: 5;
+  -webkit-column-gap: 0px;
+  -moz-column-count: 5;
+  -moz-column-gap: 0px;
+  column-count: 5;
+  column-gap: 4px;
+}
+
+#photos img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+  margin: 2px
+}
+
+@media (max-width: 1200px) {
+  #photos {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+  }
+}
+
+@media (max-width: 1000px) {
+  #photos {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+  }
+}
+
+@media (max-width: 800px) {
+  #photos {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media (max-width: 400px) {
+  #photos {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+  }
+}
+
 /* MEDIA QUERIES */
 
 /* Extra small */
@@ -91,6 +259,19 @@
 @media (min-width: 768px) {
   .homepage-jumbotron {
     background-image: url(../assets/images/sea.svg);
+  }
+
+  .homepage-title {
+    font-size: 5rem;
+    line-height: 1.2;
+  }
+
+  .homepage-subtitle {
+    font-size: 2em;
+  }
+
+  .homepage-bottom-title {
+    font-size: 1.75rem;
   }
 }
 
